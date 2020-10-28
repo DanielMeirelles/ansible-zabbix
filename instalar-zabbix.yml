@@ -3,5 +3,5 @@
   any_errors_fatal: true  # Aborta execução se algum host não estiver alcançavel
 
   roles:
-    - otrs
+    - zabbix-server
   
