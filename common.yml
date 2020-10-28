@@ -19,6 +19,7 @@
         - git
         - python36
         - python3-pip
+        - httpd
     state: present
 
 - name: Install python packages
