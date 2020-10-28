@@ -1,23 +1,26 @@
 ---
-# Variable configuration.
-- include_tasks: variables.yml
+# tasks file for ome.postgresql
 
-# Setup/install tasks.
-- include_tasks: setup-RedHat.yml
-  when: ansible_os_family == 'RedHat'
+- name: postgres | fail if postgresql_users_databases defined
+  fail:
+    msg: >
+      Variable 'postgresql_users_databases' has been replaced by
+      'postgresql_databases' and 'postgresql_users'
+  when: 'postgresql_users_databases | default(False)'
 
-- include_tasks: setup-Debian.yml
-  when: ansible_os_family == 'Debian'
+- name: postgres | fail if postgresql_install_server true
+  fail:
+    msg: >
+      Variable 'postgresql_install_server=false' has been replaced by the
+      'ome.postgresql_client' role
+  when: 'not (postgresql_install_server | default(True))'
 
-- include_tasks: initialize.yml
-- include_tasks: configure.yml
+- import_tasks: redhat.yml
+  when: ansible_os_family | lower == 'redhat'
 
-- name: Ensure PostgreSQL is started and enabled on boot.
-  service:
-    name: "{{ postgresql_daemon }}"
-    state: "{{ postgresql_service_state }}"
-    enabled: "{{ postgresql_service_enabled }}"
+- import_tasks: debian.yml
+  when: ansible_os_family | lower == 'debian'
 
-# Configure PostgreSQL.
-- import_tasks: users.yml
+- import_tasks: initialise.yml
+
 - import_tasks: databases.yml
