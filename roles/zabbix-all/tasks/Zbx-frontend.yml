@@ -50,9 +50,7 @@
   
 - name: Create firewall rule
   firewalld:
-    port: 
-    - 80/tcp
-    - 443/tcp
+    port: 80-443/tcp
     permanent: yes
     immediate: yes
     state: enabled
