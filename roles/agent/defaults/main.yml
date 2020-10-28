@@ -50,10 +50,10 @@ zabbix_repo_yum:
     state: present
 
 # Zabbix API stuff
-zabbix_agent_server_url: "http://zabbix.dj-wasabi.local"
+zabbix_agent_server_url: "https://zabbix-lab.capes.gov.br"
 zabbix_url: "{{ zabbix_agent_server_url }}"
-# zabbix_api_http_user: admin
-# zabbix_api_http_password: admin
+zabbix_api_http_user: admin
+zabbix_api_http_password: admin
 zabbix_api_user: Admin
 zabbix_api_pass: zabbix
 zabbix_api_create_hostgroup: False
@@ -146,7 +146,7 @@ zabbix_agent_ipmi_privilege: 2
 zabbix_agent_ipmi_username:
 
 # Windows/macOS Related
-zabbix_version_long: 4.4.4
+zabbix_version_long: 5.0
 
 # Windows Related
 zabbix_win_package: zabbix_agent-{{ zabbix_version_long }}-windows-i386.zip
