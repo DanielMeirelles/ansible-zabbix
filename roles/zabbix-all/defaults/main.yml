@@ -51,4 +51,4 @@ zabbix_database_creation: True
 zabbix_database_sqlload: True
 
 # MySQL
-mysql_repo: https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+#mysql_repo: https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
