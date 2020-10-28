@@ -1,6 +1,6 @@
 ---
 # defaults file for ansible-zabbix
-zabbix_version: 5.2
+zabbix_version: 5.0
 
 zbx_server_address: 127.0.0.1
 zbx_frontend_address: 127.0.0.1
