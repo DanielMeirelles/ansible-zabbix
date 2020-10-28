@@ -41,6 +41,6 @@
 
 - name: Copy zabbix_server.conf template 
   template:
-    src: templates/zabbix_server.conf.44.j2
+    src: ./roles/zabbix-all/templates/zabbix_server.conf.44.j2
     dest: /etc/zabbix/zabbix_server.conf
   notify: restart zabbix-server
