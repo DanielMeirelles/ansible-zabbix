@@ -19,7 +19,6 @@
         - git
         - python36
         - python3-pip
-        - httpd
     state: present
 
 - name: Install python packages
@@ -29,7 +28,7 @@
         - python3-pip
     state: present
 
-- name: Install pip packages
-  pip:
-    name:
-        - pymysql
+#- name: Install pip packages
+#  pip:
+#   name:
+#        - pymysql

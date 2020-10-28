@@ -7,9 +7,10 @@ zbx_frontend_address: 127.0.0.1
 zbx_database_address: 127.0.0.1
 zbx_database_saas: False
 
-mysql_root_password: Zabbixdb#2019!
+zbx_database_name: zabbix
 zbx_database_user: zabbix
-zbx_database_password: ZabbixDB#2019!
+zbx_database_password: sgjndv30FAFj1f
+
 
 zabbix_server_package_state: present
 zabbix_server_install_recommends: True
@@ -45,8 +46,8 @@ time_zone: America/Sao_Paulo
 
 
 # Database
-zabbix_server_database: mysql # mysql or pgsql
-zabbix_server_database_long: mysql # mysql or postgresql
+zabbix_server_database: pgsql # mysql or pgsql
+zabbix_server_database_long: postgresql # mysql or postgresql
 zabbix_database_creation: True
 zabbix_database_sqlload: True
 

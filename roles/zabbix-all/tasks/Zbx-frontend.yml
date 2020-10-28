@@ -18,18 +18,31 @@
       - zabbix-web-{{ zabbix_server_database }}
       - zabbix-get
       - zabbix-sender
+      - zabbix-nginx-conf
 
-- name: Make sure httpd service is running
+- name: Make sure nginx service is running
   systemd:
-    name: httpd
+    name: nginx
     state: started
     enabled: yes
 
 - name: Copy web.zabbix.conf template 
   template:
     src: ./roles/zabbix-all/templates/zabbix_web.conf.j2
-    dest: /etc/httpd/conf.d/zabbix.conf
-  notify: restart httpd
+    dest: /etc/nginx/conf.d/zabbix.conf
+- name: Copy cert file
+  template:
+    src: ./roles/zabbix-all/files/server.key
+    dest: /etc/pki/server.key
+- name: Copy cert key file 
+  template:
+    src: ./roles/zabbix-all/files/server.crt
+    dest: /etc/pki/server.crt
+- name: zabbix.conf.php
+  template:
+    src: ./roles/zabbix-all/templates/zabbix_front_config.j2
+    dest: /etc/zabbix/web/zabbix.conf.php
+  notify: restart nginx
   
 - name: Create firewall rule
   firewalld:
