@@ -20,11 +20,11 @@
       - zabbix-sender
       - zabbix-nginx-conf
 
-#- name: Make sure nginx service is running
-#  systemd:
-#    name: nginx
-#    state: started
-#    enabled: yes
+- name: Make sure nginx service is running
+  systemd:
+    name: nginx
+    state: started
+    enabled: yes
 
 - name: Copy web.zabbix.conf template 
   template:
@@ -50,7 +50,9 @@
   
 - name: Create firewall rule
   firewalld:
-    port: 80/tcp
+    port: 
+    - 80/tcp
+    - 443/tcp
     permanent: yes
     immediate: yes
     state: enabled
