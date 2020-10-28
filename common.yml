@@ -25,7 +25,7 @@
   yum:
     name:
         - python
-        - python-pip
+        - python3-pip
     state: present
 
 - name: Install pip packages
