@@ -18,7 +18,7 @@
         - rsync
         - git
         - python36
-        - python36-pip
+        - python3-pip
     state: present
 
 - name: Install python packages
