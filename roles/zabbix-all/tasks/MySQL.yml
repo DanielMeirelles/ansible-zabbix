@@ -1,20 +1,20 @@
-- name: Repo MySQL5.7
-  template:
-    src:  ./roles/zabbix-all/templates/mysql-community.repo.j2
-    dest: /etc/yum.repos.d/mysql-community.repo
-    owner: root
-    mode: 0644
-    force: yes
+#- name: Repo MySQL5.7
+#  template:
+#    src:  ./roles/zabbix-all/templates/mysql-community.repo.j2
+#    dest: /etc/yum.repos.d/mysql-community.repo
+#    owner: root
+#    mode: 0644
+#    force: yes
 
-- name: Disable Repo Mysql8
-  dnf:
-    disablerepo: mysql
+#- name: Disable Repo Mysql8
+#  dnf:
+#    disablerepo: mysql
     
 - name: Install MySQL server
   yum:
     name: mysql-server
     state: present
-    update_cache: yes
+
 
 - name: Start MySQL and enable on boot
   service:
