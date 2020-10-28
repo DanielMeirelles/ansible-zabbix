@@ -20,11 +20,11 @@
       - zabbix-sender
       - zabbix-nginx-conf
 
-- name: Make sure nginx service is running
-  systemd:
-    name: nginx
-    state: started
-    enabled: yes
+#- name: Make sure nginx service is running
+#  systemd:
+#    name: nginx
+#    state: started
+#    enabled: yes
 
 - name: Copy web.zabbix.conf template 
   template:
