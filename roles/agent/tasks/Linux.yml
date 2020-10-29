@@ -100,13 +100,13 @@
     zabbix_selinux: "{{ true }}"
   when: 'getenforce_bin.stat.exists and ("Enforcing" in sestatus.stdout or "Permissive" in sestatus.stdout)'
 
-- name: "Allow zabbix_agent to start (SELinux)"
-  selinux_permissive:
-    name: zabbix_agent_t
-    permissive: true
-  become: yes
-  when:
-    - zabbix_selinux | bool
+#- name: "Allow zabbix_agent to start (SELinux)"
+#  selinux_permissive:
+#    name: zabbix_agent_t
+#    permissive: true
+#  become: yes
+#  when:
+#   - zabbix_selinux | bool
 
 - name: "Adding zabbix group"
   group:
