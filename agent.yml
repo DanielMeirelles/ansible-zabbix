@@ -11,8 +11,8 @@
        zabbix_host_groups:
          - Linux Servers
        zabbix_link_templates:
-         - Template OS Linux
-         - Apache APP Template
+         - Template OS Linux by Zabbix agent
+         - Template App Zabbix Server
        zabbix_macros:
          - macro_key: apache_type
            macro_value: reverse_proxy
