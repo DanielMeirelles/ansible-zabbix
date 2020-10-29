@@ -2,14 +2,14 @@
 # defaults file for ansible-zabbix
 zabbix_version: 5.0
 
-zbx_server_address: 127.0.0.1
-zbx_frontend_address: 127.0.0.1
-zbx_database_address: 127.0.0.1
+zbx_server_address: 127.0.0.1   # IP  do zabbix server
+zbx_frontend_address: 127.0.0.1 # IP  do zabbix web (Frontend)
+zbx_database_address: 127.0.0.1 # IP  do banco de dados
 zbx_database_saas: False
 
 zbx_database_name: zabbix
 zbx_database_user: zabbix
-zbx_database_password: sgjndv30FAFj1f
+zbx_database_password: XXXXXXXXXX # adicionar senha do banco de dados
 
 
 zabbix_server_package_state: present

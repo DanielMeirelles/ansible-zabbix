@@ -1,8 +1,8 @@
 - hosts: localhost
   roles:
      - role: agent
-       zabbix_agent_server: 192.168.25.17
-       zabbix_agent_serveractive: 192.168.25.17
+       zabbix_agent_server: 172.19.X.X
+       zabbix_agent_serveractive: 172.19.X.X
        zabbix_url: https://zabbix-lab.capes.gov.br
        zabbix_api_use: true # Para utilizar a API para conexão com zabbix server
        zabbix_api_user: Admin
